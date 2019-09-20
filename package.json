@@ -2,6 +2,10 @@
   "name": "github-finder",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "email": "developerkui@outlook.com",
+    "name": "Gina Kui"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.6",
@@ -9,6 +13,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
   },
+  "homepage": "https://search-github-developerkui.netlify.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
