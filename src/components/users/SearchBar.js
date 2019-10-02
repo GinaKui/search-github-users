@@ -26,7 +26,7 @@ const SearchBar = () => {
         <input
           type='text'
           name='text'
-          placeholder='Type in fillers for Github Users...'
+          placeholder='Search for github user here...'
           value={text}
           required
           onChange={handleChange}

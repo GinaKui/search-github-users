@@ -12,7 +12,6 @@ import {
 } from '../types';
 
 let githubClientId, githubClientSecret;
-
 if (process.env.NODE_ENV !== 'production') {
   githubClientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
   githubClientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
@@ -22,16 +21,21 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const GithubState = props => {
+  //state
   const initialState = {
+    loading: false,
     users: [],
     user: {},
-    repos: [],
-    loading: false
+    repos: [],   
   };
-
   const [state, dispatch] = useReducer(GithubReducer, initialState);
 
-  // Search Users
+  // Set Loading
+  const setLoading = () => dispatch({ type: SET_LOADING });
+
+  /**
+   * @param {string} text user search input
+   */
   const searchUsers = async text => {
     setLoading();
     const res = await axios.get(
@@ -69,9 +73,6 @@ const GithubState = props => {
 
   // Clear Users
   const clearUsers = () => dispatch({ type: CLEAR_USERS });
-
-  // Set Loading
-  const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
     <GithubContext.Provider
