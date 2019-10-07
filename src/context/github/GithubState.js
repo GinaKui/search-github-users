@@ -20,6 +20,11 @@ if (process.env.NODE_ENV !== 'production') {
   githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
 }
 
+/**
+ * 
+ * @todo add @param and @return tag to all reasonable place
+ */ 
+
 const GithubState = props => {
   //state
   const initialState = {
