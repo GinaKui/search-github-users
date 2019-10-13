@@ -21,8 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 /**
- * 
- * @todo add @param and @return tag to all reasonable place
+ *
  */ 
 
 const GithubState = props => {
@@ -39,7 +38,7 @@ const GithubState = props => {
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   /**
-   * @param {string} text user search input
+   * @param {string} text - user search input
    */
   const searchUsers = async text => {
     setLoading();
@@ -52,7 +51,9 @@ const GithubState = props => {
     });
   };
 
-  // Get User
+  /**
+   * @param {string} username 
+   */
   const getUser = async username => {
     setLoading();
     const res = await axios.get(
@@ -64,7 +65,10 @@ const GithubState = props => {
     });
   };
 
-  // Get Repos of the User
+  
+  /**
+   * @param {string} username 
+   */
   const getUserRepos = async username => {
     setLoading();
     const res = await axios.get(
@@ -76,7 +80,9 @@ const GithubState = props => {
     });
   };
 
-  // Clear Users
+ /**
+  * @param {null}
+  */
   const clearUsers = () => dispatch({ type: CLEAR_USERS });
 
   return (
